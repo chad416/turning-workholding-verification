@@ -1,0 +1,33 @@
+{
+  "_note": "Generic 2-axis CNC lathe and power chucks. All values are ASSUMED catalogue orders of magnitude for this size class, not a specific maker's data; they are inputs of the sensitivity study. Jaw masses and centroid radii decide the centrifugal loss of clamping force (VDI 3106 method).",
+  "lathe": {"P_spindle_kW": 15.0, "efficiency": 0.8, "n_max_rpm": 3500, "rapid_mm_min": 20000, "tool_change_s": 1.5,
+            "clamp_switch_s": 3.0, "clamp_mcodes": {"high": "M61", "low": "M62"},
+            "clamp_mcodes_note": "two preset chuck pressures selected by M-code: builder-specific example codes, not a standard"},
+  "clamping": {"mu": 0.10, "S_z": 1.5, "S_sp": 1.5,
+               "source": "VDI 3106 (2004) clamping-force method: F_sp0 = S_sp (F_spz + F_c), F_spz = S_z x (cutting force transferred) / mu; S_z, S_sp >= 1.5 and mu = 0.1 for smooth jaws on machined steel are quoted from memory, not re-checked against the guideline"},
+  "chucks": {
+    "3J-210": {"n_jaws": 3, "half_angle_deg": 4.0, "F_max_kN": 72.0, "F_min_frac": 0.08, "n_max_rpm": 5000, "grip_len": 20.0,
+               "m_top_kg": 0.55, "top_offset_mm": 18.0, "m_base_kg": 0.50, "r_base_mm": 60.0, "max_grip_d": 120.0,
+               "setup_min": 10.0, "invest_rel": 1.0},
+    "3J-315": {"n_jaws": 3, "half_angle_deg": 4.0, "F_max_kN": 120.0, "F_min_frac": 0.08, "n_max_rpm": 3500, "grip_len": 25.0,
+               "m_top_kg": 1.40, "top_offset_mm": 25.0, "m_base_kg": 1.20, "r_base_mm": 95.0, "max_grip_d": 260.0,
+               "setup_min": 10.0, "invest_rel": 1.0},
+    "6J-210": {"n_jaws": 6, "half_angle_deg": 3.0, "F_max_kN": 60.0, "F_min_frac": 0.08, "n_max_rpm": 4500, "grip_len": 20.0,
+               "m_top_kg": 0.30, "top_offset_mm": 16.0, "m_base_kg": 0.30, "r_base_mm": 60.0, "max_grip_d": 120.0,
+               "setup_min": 15.0, "invest_rel": 2.5},
+    "6J-315": {"n_jaws": 6, "half_angle_deg": 3.0, "F_max_kN": 100.0, "F_min_frac": 0.08, "n_max_rpm": 3000, "grip_len": 25.0,
+               "m_top_kg": 0.75, "top_offset_mm": 22.0, "m_base_kg": 0.65, "r_base_mm": 95.0, "max_grip_d": 260.0,
+               "setup_min": 15.0, "invest_rel": 2.5},
+    "PIE-210": {"n_jaws": 3, "half_angle_deg": 50.0, "F_max_kN": 72.0, "F_min_frac": 0.08, "n_max_rpm": 3000, "grip_len": 20.0,
+                "m_top_kg": 1.10, "top_offset_mm": 15.0, "m_base_kg": 0.50, "r_base_mm": 60.0, "max_grip_d": 120.0,
+                "setup_min": 35.0, "invest_rel": 1.2},
+    "PIE-315": {"n_jaws": 3, "half_angle_deg": 50.0, "F_max_kN": 120.0, "F_min_frac": 0.08, "n_max_rpm": 2200, "grip_len": 25.0,
+                "m_top_kg": 2.60, "top_offset_mm": 20.0, "m_base_kg": 1.20, "r_base_mm": 95.0, "max_grip_d": 260.0,
+                "setup_min": 35.0, "invest_rel": 1.2}
+  },
+  "notes": {
+    "half_angle_deg": "half the contact arc of one jaw: 4 deg for a standard soft jaw bored to the grip diameter (narrow contact), 50 deg for pie jaws (3 x 100 deg)",
+    "setup_min": "jaw change + boring soft jaws to the grip diameter (pie jaws must be bored for every diameter): assumed shop times",
+    "invest_rel": "relative purchase cost of the chuck / jaw set: judgement"
+  }
+}

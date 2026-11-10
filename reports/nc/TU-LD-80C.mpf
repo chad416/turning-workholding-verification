@@ -1,0 +1,51 @@
+; TU-LD-80C tube - workholding verified
+; simulated output - not proven on a machine
+; tube D90 x D80 E355
+; chuck 6J-210 grip D90 from Z-45 to Z-25
+; clamp preset HIGH 19.3 kN (M61) - single pressure
+; spindle limit rough 800 rpm / finish 800 rpm
+G18 G71 G90 G95 G97
+M61 ; clamp preset high
+G4 F2.0
+G0 X220.000 Z100.000
+T1 D1 ; OD ROUGH CNMG 120408
+LIMS=800
+G96 S200 M3
+M8
+; face tube end
+G0 X93.000 Z2.000
+G0 Z0.000
+G1 X78.000 F0.200
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+G0 X220.000 Z100.000
+T3 D1 ; BORING BAR ROUGH CCMT 09T308
+LIMS=800
+G96 S180 M3
+M8
+; rough counterbore
+G0 X81.700 Z2.000
+G1 Z-15.000 F0.150
+G1 X80.700
+G0 Z2.000
+; rough counterbore
+G0 X83.400 Z2.000
+G1 Z-15.000 F0.150
+G1 X82.400
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+G0 X220.000 Z100.000
+T4 D1 ; BORING BAR FINISH CCMT 09T304
+LIMS=800
+G96 S200 M3
+M8
+; finish counterbore
+G0 X84.000 Z2.000
+G1 Z-15.000 F0.080
+G1 X83.000
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+M30

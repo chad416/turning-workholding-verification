@@ -1,0 +1,63 @@
+{
+  "_note": "Specific cutting force (Kienzle) per material and correction factors. Each block names its source and whether it was re-checked in that source during this project.",
+  "kienzle": {
+    "C45": {
+      "kc11": 2110,
+      "mc": 0.17,
+      "Rm_MPa": 620,
+      "Re_MPa": 340,
+      "E_GPa": 210,
+      "nu": 0.3,
+      "rho": 7850,
+      "source": "kc1.1 and mc of the nearest tabulated steel E335 (St 60, Rm about 600 MPa) in the de.wikipedia table 'Spezifische Schnittkraft' (fetched 10 Nov 2026); C45 itself is not in that table, so this is an assumption of similarity. Re/Rm: EN 10083-2 C45 +N order of magnitude (from memory)",
+      "checked": true
+    },
+    "S275JR": {
+      "kc11": 1780,
+      "mc": 0.17,
+      "source": "same table (lower bound for the sensitivity study)",
+      "checked": true
+    },
+    "42CrMo4": {
+      "kc11": 2500,
+      "mc": 0.26,
+      "source": "same table (upper bound for the sensitivity study)",
+      "checked": true
+    },
+    "E355": {
+      "kc11": 2110,
+      "mc": 0.17,
+      "Rm_MPa": 580,
+      "Re_MPa": 450,
+      "E_GPa": 210,
+      "nu": 0.3,
+      "rho": 7850,
+      "source": "cutting force: same table row as C45 (E335, the nearest tabulated grade; assumption). Re/Rm: EN 10305-1 E355 +SR as used in project 13 (data/materials.json there, not re-checked)",
+      "checked": false
+    }
+  },
+  "corrections": {
+    "gamma0_deg": 6.0,
+    "K_wear": 1.3,
+    "K_st": {
+      "turn": 1.0,
+      "bore": 1.2,
+      "groove_ext": 1.3,
+      "groove_int": 1.3
+    },
+    "K_v": "1.03 - 3 vc / 1e4 for 80-250 m/min; (100/vc)^0.1 otherwise",
+    "source": "de.wikipedia 'Spezifische Schnittkraft' correction factors, citing Tschaetsch, Praxis der Zerspantechnik, 10th ed. 2011, p. 18 (fetched 10 Nov 2026). The page gives K_wear = 1.5 as a common empirical value; 1.3 is used here for a tool changed at moderate flank wear (assumption, varied 1.0-1.5).",
+    "checked": true
+  },
+  "force_ratios": {
+    "thrust_over_cutting": 0.5,
+    "source": "ratio of the resultant of feed and passive force to the cutting force for coated carbide in steel; textbook order of magnitude 0.3-0.8 (from memory), varied in the sensitivity study. The split into feed and passive force follows the effective entering angle of the nose radius (Colwell equivalent cutting edge).",
+    "checked": false
+  },
+  "taylor": {
+    "n": 0.25,
+    "T_ref_min": 15.0,
+    "source": "Taylor tool life vc T^n = C; n = 0.25 for coated carbide on steel is the textbook order of magnitude (from memory); C is set so that each tool's programmed vc gives 15 min (assumed design point).",
+    "checked": false
+  }
+}

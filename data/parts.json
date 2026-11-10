@@ -1,0 +1,263 @@
+{
+  "_note": "Gland and piston of the two verified cylinder designs of project 13 (hydraulic-cylinder-design-verification): HD-160 rev B and LD-80 rev C. Dimensions copied from that project's calculation reports (reports/HD-160.md and reports/LD-80.md, 'Rows derived from the verified design'), which are also the rows its CNC part-family generator (project 07) turned into lathe programs. Groove sizes there are illustrative by size band, not seal-catalogue values. Stock bore, clamp allowance and fits are assumptions of this project and are marked so.",
+  "parts": {
+    "GL-LD-80C": {
+      "family": "gland",
+      "order": "LD-80 rev C",
+      "material": "C45",
+      "od": 79.95,
+      "bore": 63.2,
+      "length": 70,
+      "grooves": [
+        {
+          "name": "wiper groove",
+          "side": "id",
+          "bottom_d": 73.0,
+          "width": 6.3,
+          "z": 2,
+          "fit": "H11",
+          "ra_um": 3.2
+        },
+        {
+          "name": "rod seal groove",
+          "side": "id",
+          "bottom_d": 75.0,
+          "width": 8.1,
+          "z": 18,
+          "fit": "H9",
+          "ra_um": 1.6
+        },
+        {
+          "name": "guide ring groove",
+          "side": "id",
+          "bottom_d": 68.0,
+          "width": 5.6,
+          "z": 35,
+          "fit": "H8",
+          "ra_um": 1.6
+        },
+        {
+          "name": "O-ring groove",
+          "side": "od",
+          "bottom_d": 72.95,
+          "width": 4.8,
+          "z": 48,
+          "fit": "h9",
+          "ra_um": 1.6
+        }
+      ],
+      "od_fit": "f7",
+      "od_nominal": 80.0,
+      "od_ra_um": 3.2,
+      "bore_fit": "H9",
+      "bore_ra_um": 3.2,
+      "stock": {
+        "od": 85.0,
+        "id": 50.0
+      }
+    },
+    "GL-HD-160B": {
+      "family": "gland",
+      "order": "HD-160 rev B",
+      "material": "C45",
+      "od": 159.95,
+      "bore": 100.2,
+      "length": 110,
+      "grooves": [
+        {
+          "name": "wiper groove",
+          "side": "id",
+          "bottom_d": 112.5,
+          "width": 7.9,
+          "z": 2,
+          "fit": "H11",
+          "ra_um": 3.2
+        },
+        {
+          "name": "rod seal groove",
+          "side": "id",
+          "bottom_d": 115.0,
+          "width": 10.1,
+          "z": 28,
+          "fit": "H9",
+          "ra_um": 1.6
+        },
+        {
+          "name": "guide ring groove",
+          "side": "id",
+          "bottom_d": 106.25,
+          "width": 7.0,
+          "z": 55,
+          "fit": "H8",
+          "ra_um": 1.6
+        },
+        {
+          "name": "O-ring groove",
+          "side": "od",
+          "bottom_d": 151.2,
+          "width": 6.0,
+          "z": 75,
+          "fit": "h9",
+          "ra_um": 1.6
+        }
+      ],
+      "od_fit": "f7",
+      "od_nominal": 160.0,
+      "od_ra_um": 3.2,
+      "bore_fit": "H9",
+      "bore_ra_um": 3.2,
+      "stock": {
+        "od": 165.0,
+        "id": 85.0
+      }
+    },
+    "PI-LD-80C": {
+      "family": "piston",
+      "order": "LD-80 rev C",
+      "material": "C45",
+      "od": 79.7,
+      "bore": 51.0,
+      "length": 50,
+      "grooves": [
+        {
+          "name": "guide band groove (front)",
+          "side": "od",
+          "bottom_d": 75.0,
+          "width": 5.6,
+          "z": 4.0,
+          "fit": "h8",
+          "ra_um": 1.6
+        },
+        {
+          "name": "piston seal groove",
+          "side": "od",
+          "bottom_d": 62.0,
+          "width": 16.0,
+          "z": 17.0,
+          "fit": "h9",
+          "ra_um": 1.6
+        },
+        {
+          "name": "guide band groove (rear)",
+          "side": "od",
+          "bottom_d": 75.0,
+          "width": 5.6,
+          "z": 40.4,
+          "fit": "h8",
+          "ra_um": 1.6
+        }
+      ],
+      "od_fit": null,
+      "od_nominal": 79.7,
+      "od_ra_um": 3.2,
+      "bore_fit": "H7",
+      "bore_ra_um": 1.6,
+      "stock": {
+        "od": 85.0,
+        "id": 40.0
+      }
+    },
+    "PI-HD-160B": {
+      "family": "piston",
+      "order": "HD-160 rev B",
+      "material": "C45",
+      "od": 159.7,
+      "bore": 75.0,
+      "length": 80,
+      "grooves": [
+        {
+          "name": "guide band groove (front)",
+          "side": "od",
+          "bottom_d": 152.5,
+          "width": 8.4,
+          "z": 4.0,
+          "fit": "h8",
+          "ra_um": 1.6
+        },
+        {
+          "name": "piston seal groove",
+          "side": "od",
+          "bottom_d": 133.0,
+          "width": 24.0,
+          "z": 28.0,
+          "fit": "h9",
+          "ra_um": 1.6
+        },
+        {
+          "name": "guide band groove (rear)",
+          "side": "od",
+          "bottom_d": 152.5,
+          "width": 8.4,
+          "z": 67.6,
+          "fit": "h8",
+          "ra_um": 1.6
+        }
+      ],
+      "od_fit": null,
+      "od_nominal": 159.7,
+      "od_ra_um": 3.2,
+      "bore_fit": "H7",
+      "bore_ra_um": 1.6,
+      "stock": {
+        "od": 165.0,
+        "id": 60.0
+      }
+    },
+    "TU-LD-80C": {
+      "family": "tube",
+      "order": "LD-80 rev C",
+      "material": "E355",
+      "od": 90.0,
+      "bore": 80.0,
+      "length": 400,
+      "grooves": [],
+      "counterbore": {
+        "d": 84.0,
+        "depth": 15.0,
+        "fit": "H8",
+        "ra_um": 1.6
+      },
+      "od_fit": null,
+      "od_nominal": 90.0,
+      "od_ra_um": 3.2,
+      "bore_fit": null,
+      "bore_ra_um": 0.4,
+      "stock": {
+        "od": 90.0,
+        "id": 80.0
+      }
+    },
+    "TU-HD-160B": {
+      "family": "tube",
+      "order": "HD-160 rev B",
+      "material": "E355",
+      "od": 182.5,
+      "bore": 160.0,
+      "length": 400,
+      "grooves": [],
+      "counterbore": {
+        "d": 166.0,
+        "depth": 20.0,
+        "fit": "H8",
+        "ra_um": 1.6
+      },
+      "od_fit": null,
+      "od_nominal": 182.5,
+      "od_ra_um": 3.2,
+      "bore_fit": null,
+      "bore_ra_um": 0.4,
+      "stock": {
+        "od": 182.5,
+        "id": 160.0
+      }
+    }
+  },
+  "sources": {
+    "dimensions": "project 13 reports/LD-80.md and reports/HD-160.md, CNC rows (gland: od, rod_d + id_clear, grooves with bottom_d, width, z; piston: bore_d - od_clear, inner_d, seal and guide grooves, guide_inset)",
+    "piston groove positions": "derived from project 13's rows: guide grooves at guide_inset from each face, seal groove centred",
+    "fits": "gland OD f7 in the H8 honed bore (H8/f7 clearance fit) and piston bore H7 on the rod spigot: assumed design practice. Rod-seal groove diameter H9 (rod f8/h9) CHECKED: Trelleborg 'Hydraulic Seals - Linear, Rod Seals' (Edition January 2011), Turcon Stepseal 2K, Table XII. Piston-seal groove diameter h9 (bore H9) CHECKED: Trelleborg 'Piston Seals' catalogue (Edition January 2011), Turcon Glyd Ring, Table X. Guide-ring groove H8 / h8 and wiper groove H11: typical values quoted from memory (the guide-ring catalogue was not opened)",
+    "roughness": "groove surfaces Ra < 1.6 um CHECKED: Trelleborg Piston Seals catalogue (Edition January 2011), Table V 'Surface Roughness' (groove surface Ra < 1.6, Rz < 10, Rmax < 16 um; dynamic mating surfaces Ra 0.05-0.20 um for Turcon, 0.10-0.40 for Zurcon/rubber, which are the honed bore and the chromed rod, not turned here). Ra 3.2 um elsewhere: project choice",
+    "stock": "hollow bar, assumed sizes: 5 mm over the finished OD, bore below the finished bore",
+    "tube": "tube OD x wall from project 13 (HD-160 rev B: E355 182.5 x 11.25; LD-80 rev C: 90 x 5, as used by project 22). Only the head end is modelled (400 mm of tube; the rest is far beyond the reach of the jaw load). The gland-seat counterbore (H8, Ra 1.6) at the tube mouth is a DESIGN VARIANT for a stepped gland, not part of project 13's design; it stands for any toleranced turned diameter near the mouth of a thin tube."
+  }
+}

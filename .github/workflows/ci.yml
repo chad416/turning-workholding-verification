@@ -1,0 +1,24 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest
+      - name: read back every committed lathe program (FANUC and Sinumerik) against the workholding physics
+        run: |
+          for f in reports/nc/*.nc reports/nc/*.mpf; do
+            part=$(basename "$f"); part="${part%.*}"
+            python -m clampform verify "$f" "$part" --no-fe
+          done
+      - name: full read-back with the roundness check (FE) of the thin-tube program
+        run: python -m clampform verify reports/nc/TU-LD-80C.nc TU-LD-80C
+      - name: speed-limit audit of the project 07 programs
+        run: python -m clampform audit07
+      - name: smoke run of the report pipeline (two parts, no figures, no sensitivity)
+        run: python -m clampform report --fast --no-figures --parts PI-LD-80C TU-LD-80C --out /tmp/reports

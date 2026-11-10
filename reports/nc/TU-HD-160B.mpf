@@ -1,0 +1,51 @@
+; TU-HD-160B tube - workholding verified
+; simulated output - not proven on a machine
+; tube D182.5 x D160 E355
+; chuck 6J-315 grip D182.5 from Z-55 to Z-30
+; clamp preset HIGH 21.4 kN (M61) - single pressure
+; spindle limit rough 350 rpm / finish 350 rpm
+G18 G71 G90 G95 G97
+M61 ; clamp preset high
+G4 F2.0
+G0 X220.000 Z100.000
+T1 D1 ; OD ROUGH CNMG 120408
+LIMS=350
+G96 S200 M3
+M8
+; face tube end
+G0 X185.500 Z2.000
+G0 Z0.000
+G1 X158.000 F0.200
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+G0 X220.000 Z100.000
+T3 D1 ; BORING BAR ROUGH CCMT 09T308
+LIMS=350
+G96 S180 M3
+M8
+; rough counterbore
+G0 X162.700 Z2.000
+G1 Z-20.000 F0.150
+G1 X161.700
+G0 Z2.000
+; rough counterbore
+G0 X165.400 Z2.000
+G1 Z-20.000 F0.150
+G1 X164.400
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+G0 X220.000 Z100.000
+T4 D1 ; BORING BAR FINISH CCMT 09T304
+LIMS=350
+G96 S200 M3
+M8
+; finish counterbore
+G0 X166.000 Z2.000
+G1 Z-20.000 F0.080
+G1 X165.000
+G0 Z2.000
+G0 X220.000 Z100.000 M9
+M5
+M30

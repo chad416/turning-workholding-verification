@@ -1,0 +1,11 @@
+{
+  "_note": "Tool set and cutting data close to project 07's generic library (OD rough CNMG 120408, OD finish DNMG 150604, boring bars, grooving tools). Illustrative values, not a tool maker's catalogue.",
+  "tools": {
+    "T01": {"kind": "turn", "desc": "OD ROUGH CNMG 120408", "rn": 0.8, "kappa_deg": 95, "vc": 200, "f": 0.25, "ap": 2.0, "gamma_deg": 6},
+    "T02": {"kind": "turn", "desc": "OD FINISH DNMG 150604", "rn": 0.4, "kappa_deg": 93, "vc": 250, "f": 0.12, "ap": 0.6, "gamma_deg": 6},
+    "T03": {"kind": "bore", "desc": "BORING BAR ROUGH CCMT 09T308", "rn": 0.8, "kappa_deg": 95, "vc": 180, "f": 0.15, "ap": 1.5, "gamma_deg": 6},
+    "T04": {"kind": "bore", "desc": "BORING BAR FINISH CCMT 09T304", "rn": 0.4, "kappa_deg": 95, "vc": 200, "f": 0.08, "ap": 0.3, "gamma_deg": 6},
+    "T05": {"kind": "groove_ext", "desc": "OD GROOVE W3 R0.2", "width": 3.0, "rn": 0.2, "vc": 120, "f": 0.06, "f_side": 0.08, "gamma_deg": 0},
+    "T06": {"kind": "groove_int", "desc": "ID GROOVE W3 R0.2", "width": 3.0, "rn": 0.2, "vc": 100, "f": 0.05, "f_side": 0.06, "gamma_deg": 0}
+  }
+}
